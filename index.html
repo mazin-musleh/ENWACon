@@ -14,7 +14,9 @@
         rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <style>
         :root {
@@ -131,23 +133,6 @@
             left: 100%;
         }
 
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--teal);
-            border: 2px solid var(--teal);
-            padding: var(--space-sm) var(--space-lg);
-            border-radius: var(--radius-lg);
-            font-weight: 600;
-            cursor: pointer;
-            transition: all var(--transition-normal);
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--teal);
-            color: var(--white);
-        }
 
         .section-title {
             font-family: var(--font-heading);
@@ -168,35 +153,10 @@
             transform: translateX(-50%);
             width: 60px;
             height: 4px;
-            background: linear-gradient(90deg, var(--teal) 0%, var(--accent-gold) 100%);
+            background: linear-gradient(90deg, var(--teal) 50%, var(--accent-gold) 50%);
             border-radius: 2px;
         }
 
-        .card {
-            background: linear-gradient(145deg, var(--white) 0%, #fafcfc 100%);
-            border-radius: var(--radius-xl);
-            padding: var(--space-lg);
-            box-shadow: 0 8px 25px rgba(85, 141, 146, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08);
-            transition: all var(--transition-normal);
-            border: 1px solid rgba(85, 141, 146, 0.08);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--teal) 0%, var(--accent-gold) 100%);
-        }
-
-        .card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(85, 141, 146, 0.2), 0 8px 16px rgba(0, 0, 0, 0.12);
-        }
 
         /* Header and Navigation */
         .header {
@@ -212,7 +172,48 @@
 
         .header.scrolled {
             background: rgba(255, 255, 255, 1);
+        }
 
+        .header.glassy {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header.glassy .logo {
+            color: var(--white);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header.glassy .nav-links a {
+            color: var(--white);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .header.glassy .nav-links a:hover {
+            color: var(--accent-gold);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .header.glassy .mobile-menu-toggle {
+            color: var(--white);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .header.glassy .nav-links.active {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .header.glassy .nav-links.active a {
+            color: var(--text-dark);
+            text-shadow: none;
+        }
+
+        .header.glassy .nav-links.active a:hover {
+            color: var(--teal);
+            text-shadow: none;
         }
 
         .nav {
@@ -220,14 +221,16 @@
             justify-content: space-between;
             align-items: center;
             padding: var(--space-sm);
+            gap: var(--space-md);
         }
 
         .logo {
             font-family: var(--font-heading);
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--dark-pine);
             text-decoration: none;
+            white-space: nowrap;
         }
 
         .nav-links {
@@ -235,6 +238,7 @@
             list-style: none;
             gap: var(--space-lg);
             align-items: center;
+            white-space: nowrap;
         }
 
         .nav-links a {
@@ -276,8 +280,8 @@
         /* Hero Section */
         .hero {
             background:
-                linear-gradient(135deg, rgba(4, 73, 53, 0.8) 0%, rgba(10, 90, 71, 0.7) 50%, rgba(16, 99, 75, 0.8) 100%),
-                url('hero-bg.jpg') center/cover no-repeat;
+            linear-gradient(135deg, #02271c 0%, rgb(3 45 32 / 50%) 50%, #02271c 100%),
+                url('img/hero-bg.jpg') center/cover no-repeat;
             color: var(--white);
             min-height: 100vh;
             display: flex;
@@ -296,6 +300,7 @@
             background: radial-gradient(ellipse at top, rgba(244, 199, 79, 0.1) 0%, transparent 70%);
             pointer-events: none;
         }
+
 
         .hero-bars {
             position: absolute;
@@ -345,6 +350,10 @@
             font-size: 1.3rem;
             margin-bottom: var(--space-xl);
             opacity: 0.9;
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            justify-content: center;
         }
 
         .hero-cta {
@@ -390,11 +399,11 @@
             font-size: 1.2rem;
             line-height: 1.7;
             color: var(--text-dark);
-            margin-bottom: var(--space-xl);
+            margin-bottom: var(--space-sm);
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
-            opacity: 0.9;
+            text-align: justify;
         }
 
         /* Goals Grid */
@@ -583,7 +592,7 @@
         }
 
         .activity-item:hover {
-            border-color: var(--teal);
+
             transform: translateY(-2px);
             box-shadow: var(--shadow-md);
         }
@@ -604,7 +613,7 @@
         }
 
         .activity-item:hover .activity-icon {
-            transform: scale(1.1) rotate(5deg);
+            transform: translateY(-2px);
             box-shadow: 0 12px 30px rgba(85, 141, 146, 0.4);
         }
 
@@ -640,7 +649,7 @@
         }
 
         .expo-area:hover {
-            transform: translateY(-4px) ;
+            transform: translateY(-4px);
             box-shadow: 0 25px 50px rgba(85, 141, 146, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
@@ -654,7 +663,7 @@
             margin-bottom: var(--space-md);
         }
 
-        /* Agenda Section - Modern Table Design */
+        /* Agenda Section */
         .agenda-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -672,11 +681,11 @@
 
         .agenda-day h3 {
             color: var(--white);
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             margin: 0;
             padding: var(--space-lg);
             text-align: center;
-            background: linear-gradient(135deg, var(--dark-pine) 0%, var(--deep-green) 100%);
+            background: linear-gradient(135deg, var(--teal) 0%, var(--deep-green) 100%);
             position: relative;
         }
 
@@ -691,141 +700,16 @@
             background: var(--accent-gold);
         }
 
-        .agenda-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--white);
-        }
-
-        .agenda-table thead {
-            background: linear-gradient(135deg, var(--teal) 0%, var(--deep-green) 100%);
-        }
-
-        .agenda-table th {
-            color: var(--white);
-            padding: var(--space-md) var(--space-lg);
-            text-align: center;
-            font-weight: 600;
-            font-size: 1.1rem;
-            border-bottom: 2px solid var(--accent-gold);
-        }
-
-        .agenda-table th:first-child {
-            text-align: center;
-            width: 180px;
-        }
-
-        .agenda-table tbody tr {
-            transition: all var(--transition-normal);
-            border-bottom: 1px solid rgba(85, 141, 146, 0.1);
-        }
-
-        .agenda-table tbody tr:nth-child(even) {
-            background: linear-gradient(135deg, rgba(85, 141, 146, 0.05) 0%, rgba(85, 141, 146, 0.02) 100%);
-        }
-
-        .agenda-table tbody tr:nth-child(odd) {
-            background: linear-gradient(135deg, rgba(244, 199, 79, 0.03) 0%, rgba(244, 199, 79, 0.01) 100%);
-        }
-
-        .agenda-table tbody tr:hover {
-            background: rgba(85, 141, 146, 0.08);
-            transform: scale(1.01);
-            box-shadow: 0 4px 12px rgba(85, 141, 146, 0.15);
-        }
-
-        .agenda-table tbody tr:last-child {
-            border-bottom: none;
-        }
-
-        .agenda-table td {
-            padding: var(--space-md) var(--space-lg);
-            vertical-align: top;
-        }
-
-        .agenda-time-cell {
-            background: linear-gradient(135deg, var(--teal) 0%, rgba(85, 141, 146, 0.9) 100%);
-            color: var(--white);
-            font-weight: 600;
-            text-align: center;
-            border-radius: var(--radius-md);
-            margin: var(--space-xs);
-            padding: var(--space-sm) var(--space-md) !important;
-            box-shadow: 0 4px 8px rgba(85, 141, 146, 0.3);
-            position: relative;
-        }
-
-        .agenda-time-cell::before {
-            content: '🕐';
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: var(--accent-gold);
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .agenda-content-cell {
-            position: relative;
-        }
-
-        .agenda-content-cell h4 {
-            color: var(--dark-pine);
-            margin-bottom: var(--space-xs);
-            font-size: 1.2rem;
-            font-weight: 600;
-            line-height: 1.4;
-        }
-
-        .agenda-content-cell p {
-            color: var(--text-light);
-            font-size: 1rem;
-            line-height: 1.5;
-            margin: 0;
-        }
-
-        .agenda-content-cell::before {
-            content: '';
-            position: absolute;
-            left: -var(--space-lg);
-            top: 50%;
-            transform: translateY(-50%);
-            width: 4px;
-            height: 60%;
-            background: var(--accent-gold);
-            border-radius: 2px;
-        }
-
-        /* Special highlighting for important sessions */
-        .highlight-session {
-            background: linear-gradient(135deg, rgba(244, 199, 79, 0.1) 0%, rgba(244, 199, 79, 0.05) 100%) !important;
-        }
-
-        .highlight-session .agenda-time-cell {
-            background: linear-gradient(135deg, var(--accent-gold) 0%, #e6b547 100%);
-            color: var(--dark-pine);
-        }
-
-        .highlight-session .agenda-time-cell::before {
-            content: '⭐';
-            background: var(--dark-pine);
-            color: var(--accent-gold);
-        }
-
-        /* Legacy support for existing agenda items */
+        /* Agenda Items */
         .agenda-item {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             padding: var(--space-md);
             border-radius: var(--radius-md);
             margin-bottom: 0;
             transition: all var(--transition-fast);
+            row-gap: var(--space-sm);
+            column-gap: var(--space-md);
         }
 
         .agenda-item:nth-child(even) {
@@ -841,14 +725,14 @@
         }
 
         .agenda-time {
-            background: var(--teal);
+            background: var(--deep-green);
             color: var(--white);
             padding: var(--space-sm) var(--space-md);
             border-radius: var(--radius-md);
             font-weight: 600;
-            min-width: 120px;
+            width: 160px;
             text-align: center;
-            margin-left: var(--space-md);
+            white-space: nowrap;
         }
 
         .agenda-content h4 {
@@ -862,12 +746,108 @@
             font-size: 0.95rem;
         }
 
+        /* Vision Section */
+        .vision-section {
+            background:
+            linear-gradient(135deg, #02271c 0%, rgb(3 45 32 / 50%) 50%, #02271c 100%),
+                url('img/vision.jpg') center/cover no-repeat;
+            color: var(--white);
+            padding: var(--space-3xl) 0;
+            position: relative;
+            overflow: hidden;
+            background-attachment: fixed;
+        }
+
+        .vision-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at top, rgba(244, 199, 79, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .vision-section .section-title {
+            display: none;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4), 0 0 20px rgba(244, 199, 79, 0.3);
+        }
+
+        .vision-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .vision-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: var(--space-xl);
+            margin: var(--space-xl);
+        }
+
+        .vision-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: var(--space-xl);
+            border-radius: var(--radius-xl);
+            text-align: center;
+            transition: all var(--transition-normal);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .vision-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .vision-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, #f7d76b 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-lg);
+            color: var(--dark-pine);
+            font-size: 2rem;
+            box-shadow: 0 8px 20px rgba(244, 199, 79, 0.4);
+            transition: all var(--transition-normal);
+        }
+
+        .vision-card:hover .vision-icon {
+            transform: translateY(-4px);;
+            box-shadow: 0 12px 30px rgba(244, 199, 79, 0.5);
+        }
+
+        .vision-card h3 {
+            color: var(--white);
+            font-size: 1.8rem;
+            margin-bottom: var(--space-md);
+            font-weight: 600;
+        }
+
+        .vision-card p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
         /* Contact Section */
         .contact-section {
-            background: linear-gradient(135deg, var(--dark-pine) 0%, #0a5a47 50%, var(--deep-green) 100%);
+            background:
+            linear-gradient(135deg, #02271c 0%, rgb(3 45 32 / 50%) 50%, #02271c 100%),
+                url('img/desert-sunlight.jpg') center/cover no-repeat;
             color: var(--white);
             position: relative;
-            padding: 60px 40px;
+            padding: 100px 40px;
+            overflow: hidden;
         }
 
         .contact-section::before {
@@ -880,6 +860,9 @@
             background: radial-gradient(ellipse at bottom, rgba(244, 199, 79, 0.1) 0%, transparent 70%);
             pointer-events: none;
         }
+        .glassy-section .section-title{
+            display: none;
+        }
 
         .contact-content {
             text-align: center;
@@ -889,9 +872,19 @@
 
         .contact-info {
             background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             padding: var(--space-xl);
             border-radius: var(--radius-xl);
             margin-top: var(--space-lg);
+            transition: all var(--transition-normal);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
         .contact-info h3 {
@@ -1011,86 +1004,6 @@
             margin-top: var(--space-md);
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInFromLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInFromRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.05);
-            }
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .slide-in-left {
-            animation: slideInFromLeft 0.8s ease-out forwards;
-        }
-
-        .slide-in-right {
-            animation: slideInFromRight 0.8s ease-out forwards;
-        }
-
-        .scale-in {
-            animation: scaleIn 0.6s ease-out forwards;
-        }
-
-        .pulse-animation {
-            animation: pulse 2s ease-in-out infinite;
-        }
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -1153,16 +1066,15 @@
                 grid-template-columns: 1fr;
             }
 
+            .vision-grid {
+                grid-template-columns: 1fr;
+            }
+
             .agenda-item {
                 flex-direction: column;
                 text-align: center;
             }
 
-            .agenda-time {
-                margin-left: 0;
-                margin-bottom: var(--space-sm);
-                align-self: center;
-            }
         }
 
         @media (max-width: 480px) {
@@ -1199,9 +1111,7 @@
 
         /* Print styles */
         @media print {
-
-            .header,
-            .floating-shape {
+            .header {
                 display: none;
             }
 
@@ -1226,6 +1136,7 @@
             display: block;
             background: transparent;
             pointer-events: none;
+            z-index: 2;
         }
     </style>
 </head>
@@ -1239,6 +1150,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#introduction">مقدمة</a></li>
                 <li><a href="#about">نبذة عن المؤتمر</a></li>
+                <li><a href="#vision-mission">الرؤية والرسالة</a></li>
                 <li><a href="#goals">الأهداف</a></li>
                 <li><a href="#topics">المحاور</a></li>
                 <li><a href="#overview">نظرة عامة</a></li>
@@ -1255,17 +1167,21 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="hero">
+    <section class="hero glassy-section" id="hero">
         <div class="hero-bars" id="heroBars"></div>
+
 
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">مؤتمر القطاع غير الربحي الأول في البيئة والمياه والزراعة</h1>
                 <p class="hero-theme">بالتكامل نصنع أثرًا مستدامًا</p>
                 <div class="hero-details">
-                    <p><strong>التاريخ:</strong> 9–10 ديسمبر 2025</p>
-                    <p><strong>المكان:</strong> فندق فيرمونت الرياض</p>
-                    <p><strong>المنظم:</strong> وزارة البيئة والمياه والزراعة</p>
+                    <p><i class="fas fa-calendar-alt"
+                            style="color: var(--accent-gold); margin-left: 10px;"></i>9–10
+                        ديسمبر 2025</p>
+                    <p><i class="fas fa-map-marker-alt"
+                            style="color: var(--accent-gold); margin-left: 10px;"></i>فندق
+                        فيرمونت الرياض</p>
                 </div>
                 <div class="hero-cta">
                     <a href="#contact" class="btn-primary">سجّل الآن</a>
@@ -1281,10 +1197,20 @@
             <div class="section-content">
                 <h2 class="section-title">مقدمة</h2>
                 <p class="section-text">
-                    يُعَدّ القطاع غير الربحي أحد ركائز رؤية المملكة 2030، ويُسهم شريكًا رئيسيًا في التنمية الوطنية،
-                    مكملًا لجهود الدولة في المجالات الاجتماعية والاقتصادية. تعمل الإدارة العامة لمنظمات القطاع غير
-                    الربحي بالوزارة على تمكين هذا القطاع في مجالات البيئة والمياه والزراعة، وتعزيز الشراكات، وتحفيز
-                    العمل التطوعي، وإسناد بعض الخدمات إليه، ودعم الاستدامة والحوكمة لدى المنظمات.
+                    يُعد القطاع غير الربحي أحد الركائز الأساسية في رؤية المملكة العربية السعودية 2030، إذ تسعى الرؤية
+                    إلى تمكين هذا القطاع ليكون شريكًا رئيسيًا في التنمية الوطنية، ومكملاً لجهود الدولة في مختلف المجالات
+                    الاجتماعية والاقتصادية. وتعمل الإدارة العامة لمنظمات القطاع غير الربحي في الوزارة على تحقيق أهداف
+                    رؤية المملكة 2030 ببناء قطاع غير ربحي فاعل ومؤثر، وتمكينه في مجالات البيئة والمياه والزراعة.
+                </p>
+                <p class="section-text">
+                    وتقدم الإدارة العامة أدوارًا متعددة تشمل تنظيم أعمال المنظمات غير الربحية ومتابعتها وتمكينها من أداء
+                    دورها التنموي بفعالية، وتعزيز الشراكات بينها وبين الوزارة، وتحفيز العمل التطوعي في مجالات البيئة
+                    والمياه والزراعة، إضافة إلى إسناد بعض الخدمات إلى هذا القطاع، ونقله ودعم الاستدامة والحوكمة لدى
+                    المنظمات.
+                </p>
+                <p class="section-text">
+                    ومن هذه الأدوار تسعى الإدارة العامة إلى خلق قطاع غير ربحي مزدهر يسهم بفعالية في تحقيق الاستدامة
+                    البيئية، ويدعم توجهات المملكة نحو تنمية قائمة على الشراكة المجتمعية.
                 </p>
             </div>
         </div>
@@ -1296,10 +1222,43 @@
             <div class="section-content">
                 <h2 class="section-title">نبذة عن المؤتمر</h2>
                 <p class="section-text">
-                    منصة وطنية تجمع بين الجمعيات والمؤسسات غير الربحية والجهات الحكومية والخاصة ذات العلاقة بقطاعات
-                    البيئة والمياه والزراعة، لتعزيز التكامل والتعاون وتحقيق مستهدفات رؤية 2030، مع تسليط الضوء على دور
-                    القطاع في الاستدامة وحماية الموارد الطبيعية والأمن الغذائي وتعزيز المسؤولية الاجتماعية.
+                    يُعد مؤتمر القطاع غير الربحي الأول الذي تنظمه وزارة البيئة والمياه والزراعة منصة وطنية تجمع بين
+                    الجمعيات والمؤسسات غير الربحية، إلى جانب الجهات الحكومية والخاصة ذات العلاقة بقطاعات البيئة والمياه
+                    والزراعة.
                 </p>
+                <p class="section-text">
+                    ويهدف المؤتمر إلى تعزيز التكامل والتعاون بين هذه الجهات، بما يسهم في تحقيق مستهدفات رؤية المملكة
+                    2030، مع تسليط الضوء على دور القطاع غير الربحي في تحقيق التنمية المستدامة، والحفاظ على الموارد
+                    الطبيعية والأمن الغذائي، وتعزيز المسؤولية الاجتماعية.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision and Mission Section -->
+    <section class="vision-section glassy-section" id="vision-mission">
+        <div class="container">
+            <div class="vision-content">
+                <h2 class="section-title" style="color: var(--white); margin-bottom: var(--space-2xl);">الرؤية والرسالة
+                </h2>
+                <div class="vision-grid">
+                    <div class="vision-card">
+                        <div class="vision-icon"><i class="fas fa-eye"></i></div>
+                        <h3>الرؤية</h3>
+                        <p>
+                            أن يكون القطاع غير الربحي شريكًا استراتيجيًا ومحركًا فاعلًا للتنمية المستدامة في مجالات
+                            البيئة والمياه والزراعة
+                        </p>
+                    </div>
+                    <div class="vision-card">
+                        <div class="vision-icon"><i class="fas fa-bullseye"></i></div>
+                        <h3>الرسالة</h3>
+                        <p>
+                            منصة معرفية لتبادل الخبرات والمعارف في المجالات التنموية المستدامة للارتقاء بالقطاع غير
+                            الربحي في منظومة وزارة البيئة والمياه والزراعة
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1684,7 +1643,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact-section" id="contact">
+    <section class="contact-section glassy-section" id="contact">
         <div class="container">
             <div class="contact-content">
                 <h2 class="section-title" style="color: var(--white);">التواصل والتسجيل</h2>
@@ -1711,6 +1670,7 @@
 
                 <nav class="footer-links">
                     <a href="#about">نبذة عن المؤتمر</a>
+                    <a href="#vision-mission">الرؤية والرسالة</a>
                     <a href="#goals">الأهداف</a>
                     <a href="#topics">المحاور</a>
                     <a href="#activities">الأنشطة</a>
@@ -1742,13 +1702,38 @@
         // Header Scroll Effect
         const header = document.getElementById('header');
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
+        function updateHeaderStyle() {
+            const scrollY = window.scrollY;
+            const headerHeight = header.offsetHeight;
+
+            // Check if entire header is within any glassy section
+            const glassySections = document.querySelectorAll('.glassy-section');
+            let isInGlassySection = false;
+
+            glassySections.forEach(section => {
+                const sectionRect = section.getBoundingClientRect();
+                // Header is fully within section when section top is above header and section bottom is below header
+                const isFullyInSection = sectionRect.top <= 0 && sectionRect.bottom >= headerHeight;
+
+                if (isFullyInSection) {
+                    isInGlassySection = true;
+                }
+            });
+
+            if (isInGlassySection) {
+                header.classList.add('glassy');
                 header.classList.remove('scrolled');
+            } else if (scrollY > 100) {
+                header.classList.add('scrolled');
+                header.classList.remove('glassy');
+            } else {
+                header.classList.remove('scrolled', 'glassy');
             }
-        });
+        }
+
+        window.addEventListener('scroll', updateHeaderStyle);
+        window.addEventListener('resize', updateHeaderStyle);
+        updateHeaderStyle(); // Initial call
 
         // Smooth Scroll for Navigation Links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
