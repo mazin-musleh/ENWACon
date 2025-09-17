@@ -216,6 +216,7 @@
             text-shadow: none;
         }
 
+
         .nav {
             display: flex;
             justify-content: space-between;
@@ -280,8 +281,8 @@
         /* Hero Section */
         .hero {
             background:
-            linear-gradient(135deg, #02271c 0%, rgb(3 45 32 / 50%) 50%, #02271c 100%),
-                url('img/hero-bg.jpg') center/cover no-repeat;
+                linear-gradient(135deg, #02271c 0%, rgb(3 45 32 / 50%) 50%, #02271c 100%),
+                url('img/hero-bg.webp') center/cover no-repeat;
             color: var(--white);
             min-height: 100vh;
             display: flex;
@@ -352,7 +353,7 @@
             opacity: 0.9;
             display: flex;
             flex-wrap: wrap;
-            gap: var(--space-md);
+            gap: var(--space-sm);
             justify-content: center;
         }
 
@@ -361,6 +362,27 @@
             gap: var(--space-md);
             justify-content: center;
             flex-wrap: wrap;
+        }
+
+        .hero-footer {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: var(--space-lg);
+            gap: 16px;
+            align-items: center;
+        }
+
+        .hero-footer span {
+            display: block;
+            max-width: 290px;
+            text-align: justify;
+        }
+
+        .hero-footer img {
+            width: 250px;
+            object-fit: cover;
+            height: 64px;
         }
 
         /* Section Styles */
@@ -424,6 +446,29 @@
             overflow: hidden;
         }
 
+        .goal-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
+        .goal-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--teal) 0%, var(--deep-green) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.8rem;
+            font-weight: 700;
+            box-shadow: 0 8px 20px rgba(85, 141, 146, 0.3);
+            transition: all var(--transition-normal);
+            flex-shrink: 0;
+        }
+
         .goal-item::before {
             content: '';
             position: absolute;
@@ -442,22 +487,128 @@
             border-right-color: var(--accent-gold);
         }
 
+        .goal-item:hover .goal-number {
+            background: linear-gradient(135deg, var(--accent-gold) 0%, #f7d76b 100%);
+            color: var(--dark-pine);
+            box-shadow: 0 12px 30px rgba(244, 199, 79, 0.4);
+        }
+
+        .goal-number>* {
+            display: block;
+            transform: translateY(-2px);
+        }
+
         .goal-item:hover::before {
             opacity: 1;
         }
 
         .goal-item h3 {
             color: var(--dark-pine);
-            margin-bottom: var(--space-md);
             font-size: 1.4rem;
             font-weight: 600;
             line-height: 1.3;
         }
 
+        /* Testimonials Carousel */
+        .testimonials-container {
+            position: relative;
+            max-width: 800px;
+            margin: var(--space-xl) auto 0;
+        }
+
+        .testimonials-carousel {
+            overflow: hidden;
+            border-radius: var(--radius-xl);
+        }
+
+        .testimonials-track {
+            display: flex;
+            transition: transform var(--transition-normal);
+        }
+
+        .testimonial-slide {
+            width: 100%;
+            flex-shrink: 0;
+            background: linear-gradient(145deg, var(--white) 0%, #fafcfc 100%);
+            padding: var(--space-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-style: italic;
+            flex-direction: row;
+            gap: var(--space-md);
+        }
+
+        .testimonial-slide .avatar {
+            width: 160px;
+            border: 3px solid var(--accent-gold);
+            padding: 4px;
+        }
+
+        .testimonial-slide .speech {
+            width: 100%;
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--space-lg);
+            margin-top: var(--space-lg);
+        }
+
+        .carousel-btn {
+            background: linear-gradient(135deg, var(--teal) 0%, var(--deep-green) 100%);
+            color: var(--white);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            box-shadow: 0 4px 12px rgba(85, 141, 146, 0.3);
+            font-size: 1.2rem;
+        }
+
+        .carousel-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(85, 141, 146, 0.4);
+        }
+
+        .carousel-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-sm);
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(85, 141, 146, 0.3);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .indicator.active {
+            background: var(--teal);
+            transform: scale(1.2);
+        }
+
         /* Topics Grid */
         .topics-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: var(--space-lg);
             margin-top: var(--space-xl);
         }
@@ -470,6 +621,22 @@
             transition: all var(--transition-normal);
             position: relative;
             overflow: hidden;
+            text-align: center;
+        }
+
+        .topic-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--teal) 0%, var(--deep-green) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-lg);
+            color: var(--white);
+            font-size: 2rem;
+            box-shadow: 0 8px 20px rgba(85, 141, 146, 0.3);
+            transition: all var(--transition-normal);
         }
 
         .topic-card::after {
@@ -493,6 +660,13 @@
             opacity: 1;
         }
 
+        .topic-card:hover .topic-icon {
+            transform: translateY(-4px);
+            background: linear-gradient(135deg, var(--accent-gold) 0%, #f7d76b 100%);
+            color: var(--dark-pine);
+            box-shadow: 0 12px 30px rgba(244, 199, 79, 0.4);
+        }
+
         .topic-card h3 {
             color: var(--dark-pine);
             margin-bottom: var(--space-md);
@@ -507,21 +681,61 @@
         }
 
         /* Overview Section */
+        .overview-section {
+            background:
+                linear-gradient(135deg, #02271c 0%, rgb(3 45 32 / 50%) 50%, #02271c 100%),
+                url('img/tabuk.jpeg') center/cover no-repeat;
+            color: var(--white);
+            padding: var(--space-3xl) 0;
+            position: relative;
+            overflow: hidden;
+            background-attachment: fixed;
+        }
+
+        .overview-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(244, 199, 79, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .overview-section .section-title {
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4), 0 0 20px rgba(244, 199, 79, 0.3);
+        }
+
+        .overview-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         .overview-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: var(--space-xl);
             margin-top: var(--space-xl);
+            justify-content: center;
         }
 
         .overview-card {
-            background: linear-gradient(145deg, var(--white) 0%, #fafcfc 100%);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             padding: var(--space-xl);
             border-radius: var(--radius-xl);
-            box-shadow: 0 8px 25px rgba(85, 141, 146, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
             transition: all var(--transition-normal);
             position: relative;
             overflow: hidden;
+            flex: 1 1 350px;
+            min-width: 350px;
+            max-width: 500px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
         .overview-card::before {
@@ -537,8 +751,9 @@
         }
 
         .overview-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(85, 141, 146, 0.2), 0 8px 16px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
         .overview-card:hover::before {
@@ -546,11 +761,19 @@
         }
 
         .overview-card h3 {
-            color: var(--dark-pine);
+            color: var(--accent-gold);
             font-size: 1.8rem;
             margin-bottom: var(--space-md);
             border-bottom: 3px solid var(--accent-gold);
             padding-bottom: var(--space-sm);
+            font-weight: 600;
+        }
+
+        .overview-card p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: justify;
         }
 
         .overview-card ul {
@@ -560,14 +783,16 @@
 
         .overview-card li {
             padding: var(--space-sm) 0;
-            border-bottom: 1px solid rgba(85, 141, 146, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             position: relative;
             padding-right: var(--space-md);
+            color: rgba(255, 255, 255, 0.9);
+            text-align: start;
         }
 
         .overview-card li::before {
             content: '•';
-            color: var(--teal);
+            color: var(--accent-gold);
             font-weight: bold;
             position: absolute;
             right: 0;
@@ -625,6 +850,10 @@
             margin-top: var(--space-xl);
         }
 
+        #expo .section-text {
+            text-align: center;
+        }
+
         .expo-area {
             background: linear-gradient(145deg, var(--white) 0%, #fafcfc 100%);
             padding: var(--space-xl);
@@ -633,6 +862,7 @@
             transition: all var(--transition-normal);
             position: relative;
             overflow: hidden;
+            text-align: center;
         }
 
 
@@ -675,18 +905,20 @@
             padding: 0;
             margin-bottom: var(--space-xl);
             box-shadow: 0 8px 25px rgba(85, 141, 146, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
-            overflow: hidden;
+            /*overflow: clip;*/
             border: 1px solid rgba(85, 141, 146, 0.08);
         }
 
         .agenda-day h3 {
             color: var(--white);
-            font-size: 1.5rem;
+            font-size: 1.1rem;
             margin: 0;
             padding: var(--space-lg);
             text-align: center;
             background: linear-gradient(135deg, var(--teal) 0%, var(--deep-green) 100%);
-            position: relative;
+            position: sticky;
+            border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+            top: 50px;
         }
 
         .agenda-day h3::after {
@@ -725,12 +957,12 @@
         }
 
         .agenda-time {
-            background: var(--deep-green);
+            background: linear-gradient(135deg, var(--teal) 0%, var(--deep-green) 100%);
             color: var(--white);
             padding: var(--space-sm) var(--space-md);
             border-radius: var(--radius-md);
             font-weight: 600;
-            width: 160px;
+            width: 170px;
             text-align: center;
             white-space: nowrap;
         }
@@ -749,7 +981,7 @@
         /* Vision Section */
         .vision-section {
             background:
-            linear-gradient(135deg, #02271c 0%, rgb(3 45 32 / 50%) 50%, #02271c 100%),
+                linear-gradient(135deg, #02271c 0%, rgb(3 45 32 / 50%) 50%, #02271c 100%),
                 url('img/vision.jpg') center/cover no-repeat;
             color: var(--white);
             padding: var(--space-3xl) 0;
@@ -786,7 +1018,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: var(--space-xl);
-            margin: var(--space-xl);
         }
 
         .vision-card {
@@ -822,7 +1053,7 @@
         }
 
         .vision-card:hover .vision-icon {
-            transform: translateY(-4px);;
+            transform: translateY(-4px);
             box-shadow: 0 12px 30px rgba(244, 199, 79, 0.5);
         }
 
@@ -842,11 +1073,10 @@
         /* Contact Section */
         .contact-section {
             background:
-            linear-gradient(135deg, #02271c 0%, rgb(3 45 32 / 50%) 50%, #02271c 100%),
-                url('img/desert-sunlight.jpg') center/cover no-repeat;
+                linear-gradient(135deg, #02271c 0%, rgb(3 45 32 / 50%) 50%, #02271c 100%),
+                url('img/desert-sunlight.webp') center/cover no-repeat;
             color: var(--white);
             position: relative;
-            padding: 100px 40px;
             overflow: hidden;
         }
 
@@ -860,8 +1090,17 @@
             background: radial-gradient(ellipse at bottom, rgba(244, 199, 79, 0.1) 0%, transparent 70%);
             pointer-events: none;
         }
-        .glassy-section .section-title{
+
+        .glassy-section:not(#overview) .section-title {
             display: none;
+        }
+
+        .glassy-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
         }
 
         .contact-content {
@@ -1040,6 +1279,15 @@
                 font-size: 1.1rem;
             }
 
+            .hero-footer {
+                justify-content: center;
+            }
+
+            .hero-footer span {
+                text-align: center;
+            }
+
+
             .section-title {
                 font-size: 2rem;
             }
@@ -1047,6 +1295,12 @@
             .hero-cta {
                 flex-direction: column;
                 align-items: center;
+            }
+
+            .testimonial-slide {
+                flex-direction: column;
+                padding: var(--space-md) var(--space-sm);
+                gap: var(--space-sm);
             }
 
             .goals-grid,
@@ -1070,6 +1324,20 @@
                 grid-template-columns: 1fr;
             }
 
+            .goal-item {
+                padding: var(--space-md);
+
+            }
+
+            .goal-item h3 {
+                font-size: 1.2rem;
+            }
+
+            .expo-area h3 {
+                font-size: 1.2rem;
+                margin-bottom: var(--space-sm);
+            }
+
             .agenda-item {
                 flex-direction: column;
                 text-align: center;
@@ -1083,7 +1351,7 @@
             }
 
             .hero-title {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
 
             .hero-theme {
@@ -1148,6 +1416,7 @@
             <a href="#" class="logo">مؤتمر القطاع غير الربحي</a>
 
             <ul class="nav-links" id="navLinks">
+                <li><a href="#testimonials">شهادات المشاركين</a></li>
                 <li><a href="#introduction">مقدمة</a></li>
                 <li><a href="#about">نبذة عن المؤتمر</a></li>
                 <li><a href="#vision-mission">الرؤية والرسالة</a></li>
@@ -1176,19 +1445,73 @@
                 <h1 class="hero-title">مؤتمر القطاع غير الربحي الأول في البيئة والمياه والزراعة</h1>
                 <p class="hero-theme">بالتكامل نصنع أثرًا مستدامًا</p>
                 <div class="hero-details">
-                    <p><i class="fas fa-calendar-alt"
-                            style="color: var(--accent-gold); margin-left: 10px;"></i>9–10
+                    <p><i class="fas fa-calendar-alt" style="color: var(--accent-gold); margin-left: 10px;"></i>9–10
                         ديسمبر 2025</p>
-                    <p><i class="fas fa-map-marker-alt"
-                            style="color: var(--accent-gold); margin-left: 10px;"></i>فندق
+                    <p><i class="fas fa-map-marker-alt" style="color: var(--accent-gold); margin-left: 10px;"></i>فندق
                         فيرمونت الرياض</p>
                 </div>
                 <div class="hero-cta">
                     <a href="#contact" class="btn-primary">سجّل الآن</a>
                 </div>
             </div>
+            <div class="hero-footer">
+                <img src="img/mewa-logo-white.svg">
+                <span>وكالة الوزارة لخدمة المستفيدين وشؤون الفروع
+                    الإدارة العامة لمنظمات القطاع غير الربحي</span>
+            </div>
         </div>
         <canvas id="dotsCanvas"></canvas>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">شهادات المشاركين</h2>
+            <div class="testimonials-container">
+                <div class="testimonials-carousel">
+                    <div class="testimonials-track" id="testimonialsTrack">
+                        <div class="testimonial-slide">
+                            <img class="avatar" src="img/king-salman.jpg">
+                            <div class="speech">
+                                <img src="img/king-speech.svg">
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <img class="avatar" src="img/crown-prince-mohammed-bin-salman.jpg">
+                            <div class="speech">
+                                <img src="img/crown-prince-speech.svg">
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <img class="avatar" src="img/minister.jpg">
+                            <div class="speech">
+                                <img src="img/minister-speech.svg">
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <img class="avatar" src="img/deputy-minister.jpg">
+                            <div class="speech">
+                                <img src="img/deputy-minister-speech.svg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn" id="prevBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="carousel-indicators">
+                        <span class="indicator active" data-slide="0"></span>
+                        <span class="indicator" data-slide="1"></span>
+                        <span class="indicator" data-slide="2"></span>
+                        <span class="indicator" data-slide="3"></span>
+                    </div>
+                    <button class="carousel-btn" id="nextBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Introduction Section -->
@@ -1269,29 +1592,48 @@
             <h2 class="section-title">أهداف المؤتمر</h2>
             <div class="goals-grid">
                 <div class="goal-item">
-                    <h3>إبراز مكانة القطاع غير الربحي</h3>
-                    <p>إبراز مكانة القطاع غير الربحي ودوره وتعزيز المشهد المعرفي.</p>
-                </div>
-                <div class="goal-item">
-                    <h3>التصدي للتحديات البيئية</h3>
-                    <p>إبراز دور القطاع في التصدي للتحديات البيئية والمائية والزراعية والإسهام في تحقيق الأمن الغذائي.
+                    <div class="goal-header">
+                        <div class="goal-number"><span>1</span></div>
+                        <h3>إبراز مكانة القطاع غير الربحي</h3>
+                    </div>
+                    <p>إبراز مكانة القطاع غير الربحي وتسليط الضوء على التجارب الدولية التي تُسهم في تطويره، وتعزيز أثره.
                     </p>
                 </div>
                 <div class="goal-item">
-                    <h3>تعزيز المسؤولية الاجتماعية</h3>
-                    <p>تعزيز ثقافة المسؤولية الاجتماعية ودعم المجتمع وحماية الموارد الطبيعية.</p>
+                    <div class="goal-header">
+                        <div class="goal-number"><span>2</span></div>
+                        <h3>تعزيز ثقافة المسؤولية الاجتماعية</h3>
+                    </div>
+                    <p>تعزيز ثقافة المسؤولية الاجتماعية، ودعم مساهمة المجتمع المدني في حماية الموارد الطبيعية.</p>
                 </div>
                 <div class="goal-item">
-                    <h3>الإبداع والابتكار</h3>
-                    <p>تعزيز الإبداع والابتكار في أعمال القطاع غير الربحي.</p>
+                    <div class="goal-header">
+                        <div class="goal-number"><span>3</span></div>
+                        <h3>التصدي للتحديات البيئية والمائية والزراعية</h3>
+                    </div>
+                    <p>إبراز دور القطاع غير الربحي في التصدي للتحديات البيئية والمائية والزراعية، والإسهام في تحقيق
+                        الأمن الغذائي.</p>
                 </div>
                 <div class="goal-item">
-                    <h3>تبادل الخبرات والمعرفة</h3>
+                    <div class="goal-header">
+                        <div class="goal-number"><span>4</span></div>
+                        <h3>تعزيز الإبداع والابتكار</h3>
+                    </div>
+                    <p>تعزيز الإبداع والابتكار في أعمال القطاع غير الربحي باكتشاف حلول جديدة، وتبنّيها.</p>
+                </div>
+                <div class="goal-item">
+                    <div class="goal-header">
+                        <div class="goal-number"><span>5</span></div>
+                        <h3>تبادل الخبرات والمعرفة</h3>
+                    </div>
                     <p>تبادل الخبرات والمعرفة بين القطاع غير الربحي والجهات الحكومية والخاصة ذات العلاقة.</p>
                 </div>
                 <div class="goal-item">
-                    <h3>تعزيز الشراكات الفاعلة</h3>
-                    <p>تعزيز الشراكات الفاعلة مع كافة القطاعات لتحقيق التنمية المستدامة.</p>
+                    <div class="goal-header">
+                        <div class="goal-number"><span>6</span></div>
+                        <h3>تعزيز الشراكات الفاعلة</h3>
+                    </div>
+                    <p>تعزيز الشراكات الفاعلة لتحقق التنمية المستدامة.</p>
                 </div>
             </div>
         </div>
@@ -1303,46 +1645,74 @@
             <h2 class="section-title">المحاور الرئيسية</h2>
             <div class="topics-grid">
                 <div class="topic-card">
-                    <h3>الأنظمة والتشريعات المحلية والدولية</h3>
-                    <p>إطارات الحوكمة والسياسات المُمكِّنة لنمو القطاع غير الربحي.</p>
+                    <div class="topic-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3>الأنظمة والتشريعات المحلية والدولية في القطاع غير الربحي</h3>
+                    <p>استعراض القوانين والسياسات التي تنظّم عمل القطاع غير الربحي محليًا ودوليًا، وتوضيح أفضل الممارسات
+                        لتطويره وتحقيق الحوكمة.</p>
                 </div>
                 <div class="topic-card">
-                    <h3>التمكين والدعم للمنظمات غير الربحية في البيئة</h3>
-                    <p>آليات الدعم والتأهيل وبناء القدرات.</p>
+                    <div class="topic-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>التمكين والدعم لمنظمات غير الربحية في البيئة</h3>
+                    <p>بحث أساليب وآليات تمكين هذه المنظمات وتقديم الدعم اللازم لتعزيز أدائها في مجالات البيئة والمياه
+                        والزراعة.</p>
                 </div>
                 <div class="topic-card">
-                    <h3>الابتكار والإبداع في أعمال القطاع غير الربحي</h3>
-                    <p>حلول مبتكرة وممارسات رائدة لتعظيم الأثر.</p>
+                    <div class="topic-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>الابتكار والإبداع في أعمال القطاع غير الربحي في البيئة</h3>
+                    <p>تسليط الضوء على الأفكار المبتكرة والحلول الإبداعية التي ترفع من كفاءة العمل في القطاع غير الربحي
+                        البيئي.</p>
                 </div>
                 <div class="topic-card">
-                    <h3>تجارب ناجحة في مجالات البيئة</h3>
-                    <p>قصص نجاح قابلة للتكرار والتوسع.</p>
+                    <div class="topic-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>تجارب ناجحة في القطاع غير الربحي في مجالات البيئة</h3>
+                    <p>عرض قصص نجاح ومبادرات مميزة تُبرز أثر القطاع غير الربحي في معالجة القضايا البيئية وتحقيق التنمية
+                        المستدامة.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Overview Section -->
-    <section class="section" id="overview">
+    <section class="overview-section glassy-section" id="overview">
         <div class="container">
-            <h2 class="section-title">نظرة عامة والفئة المستهدفة</h2>
-            <div class="overview-grid">
-                <div class="overview-card">
-                    <h3>نظرة عامة</h3>
-                    <p>
-                        استعراض دور القطاع غير الربحي في مجالات البيئة والمياه والزراعة، مع إبراز التجارب الدولية
-                        والمبادرات عبر أوراق متخصصة، وركن للاستشارات للتواصل مع نخبة من الخبراء ومناقشة فرص التمكين
-                        والتكامل.
-                    </p>
-                </div>
-                <div class="overview-card">
-                    <h3>الفئة المستهدفة</h3>
-                    <ul>
-                        <li>منظمات القطاع غير الربحي التي تشرف عليها الوزارة فنيًا</li>
-                        <li>الشركات والقطاع الخاص والمهتمون بالمسؤولية الاجتماعية</li>
-                        <li>الجهات الحكومية ذات العلاقة</li>
-                        <li>الأفراد والباحثون والمهتمون</li>
-                    </ul>
+            <div class="overview-content">
+                <h2 class="section-title" style="color: var(--white); margin-bottom: var(--space-2xl);">نظرة عامة عن
+                    المؤتمر</h2>
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <h3>اليوم الأول</h3>
+                        <p>
+                            افتتاح أعمال المؤتمر، والكلمة الافتتاحية، والجلسة الوزارية لاستعراض دور القطاع غير الربحي في
+                            تحقيق أهداف التنمية المستدامة، والاحتفاء باليوم العالمي للتطوع لتسليط الضوء على دور
+                            المتطوعين في دعم التنمية المستدامة وتكريمهم.
+                        </p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>اليوم الثاني</h3>
+                        <p>
+                            استعراض دور القطاع غير الربحي في مجالات البيئة والمياه والزراعة، وتسليط الضوء على التجارب
+                            الدولية والمبادرات بأوراق علمية متخصصة، وركن للاستشارات يتيح الفرصة للمشاركين والزوار
+                            للتواصل المباشر مع نخبة من الخبراء والمختصين، وتبادل الخبرات، ومناقشة فرص التمكين والتكامل
+                            بين القطاعات.
+                        </p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>الفئة المستهدفة</h3>
+                        <ul>
+                            <li>منظمات القطاع غير الربحي التي تشرف عليها الوزارة فنيًا</li>
+                            <li>الشركات والقطاع الخاص المهتمون بالمسؤولية الاجتماعية</li>
+                            <li>الأفراد والباحثون والمؤتمِرون</li>
+                            <li>الجهات الحكومية ذات العلاقة</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1392,19 +1762,32 @@
     <!-- Expo Section -->
     <section class="section" id="expo">
         <div class="container">
-            <h2 class="section-title">نبذة عن المعرض المصاحب</h2>
+            <h2 class="section-title">نبذة عن المعرض المصاحب للمؤتمر</h2>
+            <div class="section-content">
+                <p class="section-text">
+                    يُعد منصة تفاعلية تجمع أبرز الجهات العاملة في مجالات البيئة والمياه والزراعة لتعزيز الشراكات، وبناء
+                    فرص التعاون بين مختلف الأطراف ذات العلاقة.
+                </p>
+                <p class="section-text"
+                    style="font-weight: 600; color: var(--dark-pine); margin-bottom: var(--space-xl);">
+                    ينقسم المعرض إلى ثلاث مناطق رئيسية:
+                </p>
+            </div>
             <div class="expo-areas">
                 <div class="expo-area">
                     <h3>منطقة الجهات الحكومية</h3>
-                    <p>استعراض الاستراتيجيات والمبادرات والمشاريع الهادفة إلى تمكين القطاع غير الربحي.</p>
+                    <p>تضم الجهات الرسمية ذات العلاقة بقطاعات البيئة والمياه والزراعة، إذ تستعرض استراتيجياتها
+                        ومبادراتها، ومشاريعها الصاعدة إلى تحقيق التنمية المستدامة، وتمكين القطاع غير الربحي.</p>
                 </div>
                 <div class="expo-area">
                     <h3>منطقة الجهات المانحة</h3>
-                    <p>تسليط الضوء على الجهات الداعمة والممولة، وآليات التمويل وبناء شراكات مؤثرة.</p>
+                    <p>تسلط الضوء على الجهات الداعمة والممولة، بما في ذلك صناديق التنمية والمؤسسات الخيرية، وتتيح الفرصة
+                        للمنظمات غير الربحية للتعرف على آليات التمويل وبناء شراكات استراتيجية مؤثرة.</p>
                 </div>
                 <div class="expo-area">
                     <h3>منطقة المؤسسات والجمعيات</h3>
-                    <p>إتاحة استعراض المبادرات والبرامج الرائدة وإسهاماتها في تحقيق أهداف الاستدامة.</p>
+                    <p>تضم منطقة متخصصة تتيح للمؤسسات والجمعيات في القطاع غير الربحي استعراض مبادراتها وبرامجها الرائدة،
+                        وتسليط الضوء على إسهاماتها لتحقيق أهداف التنمية المستدامة.</p>
                 </div>
             </div>
         </div>
@@ -1699,15 +2082,29 @@
             mobileMenuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
         });
 
+        // Performance optimization: Throttle function
+        function throttle(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
         // Header Scroll Effect
         const header = document.getElementById('header');
+        // Cache glassy sections to avoid repeated DOM queries
+        const glassySections = document.querySelectorAll('.glassy-section');
 
         function updateHeaderStyle() {
             const scrollY = window.scrollY;
             const headerHeight = header.offsetHeight;
 
             // Check if entire header is within any glassy section
-            const glassySections = document.querySelectorAll('.glassy-section');
             let isInGlassySection = false;
 
             glassySections.forEach(section => {
@@ -1731,8 +2128,9 @@
             }
         }
 
-        window.addEventListener('scroll', updateHeaderStyle);
-        window.addEventListener('resize', updateHeaderStyle);
+        // Apply throttling to scroll events (~60fps)
+        window.addEventListener('scroll', throttle(updateHeaderStyle, 4), { passive: true });
+        window.addEventListener('resize', throttle(updateHeaderStyle, 100), { passive: true });
         updateHeaderStyle(); // Initial call
 
         // Smooth Scroll for Navigation Links
@@ -1785,6 +2183,57 @@
             return re.test(email);
         }
 
+        // Testimonials Carousel
+        let currentSlide = 0;
+        const totalSlides = 4;
+        const track = document.getElementById('testimonialsTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const indicators = document.querySelectorAll('.indicator');
+
+        function updateCarousel() {
+            const translateX = currentSlide * 100;
+            track.style.transform = `translateX(${translateX}%)`;
+
+            // Update indicators
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlide);
+            });
+
+            // Update button states
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === totalSlides - 1;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateCarousel();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateCarousel();
+            }
+        }
+
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateCarousel();
+        }
+
+        // Event listeners
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => goToSlide(index));
+        });
+
+        // Initialize carousel
+        updateCarousel();
 
     </script>
     <script>
@@ -1799,7 +2248,7 @@
             canvas.height = Math.floor(cssH * DPR);
             ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
         }
-        window.addEventListener('resize', resizeCanvas, { passive: true });
+        window.addEventListener('resize', throttle(resizeCanvas, 100), { passive: true });
         resizeCanvas();
 
         // Generate random dots based on screen size
@@ -1821,31 +2270,63 @@
             color: Math.random() > 0.7 ? 'rgba(244, 199, 79,' : 'rgba(255, 255, 255,'
         }));
 
-        function drawDots() {
-            const W = canvas.width / (window.devicePixelRatio || 1);
-            const H = canvas.height / (window.devicePixelRatio || 1);
+        let isHeroVisible = true;
+        let animationFrameId;
 
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            dots.forEach(dot => {
-                // Update position
-                dot.x += dot.speedX;
-                dot.y += dot.speedY;
-
-                // Wrap around edges instead of bouncing
-                if (dot.x < 0) dot.x = W;
-                if (dot.x > W) dot.x = 0;
-                if (dot.y < 0) dot.y = H;
-                if (dot.y > H) dot.y = 0;
-
-                // Draw dot
-                ctx.beginPath();
-                ctx.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
-                ctx.fillStyle = dot.color + dot.opacity + ')';
-                ctx.fill();
+        // Check if Intersection Observer is supported
+        if ('IntersectionObserver' in window) {
+            // Observer to check if hero section is visible
+            const heroObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    isHeroVisible = entry.isIntersecting;
+                    if (!isHeroVisible && animationFrameId) {
+                        // Clear canvas when hero is not visible
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    }
+                });
+            }, {
+                threshold: 0.1
             });
 
-            requestAnimationFrame(drawDots);
+            // Start observing the hero section
+            const heroSection = document.querySelector('#hero');
+            if (heroSection) {
+                heroObserver.observe(heroSection);
+            }
+        } else {
+            // Fallback for older browsers: animation always runs
+            console.log('Intersection Observer not supported, dots animation will always run');
+            isHeroVisible = true;
+        }
+
+        function drawDots() {
+            // Only animate if hero section is visible
+            if (isHeroVisible) {
+                const W = canvas.width / (window.devicePixelRatio || 1);
+                const H = canvas.height / (window.devicePixelRatio || 1);
+
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                dots.forEach(dot => {
+                    // Update position
+                    dot.x += dot.speedX;
+                    dot.y += dot.speedY;
+
+                    // Wrap around edges instead of bouncing
+                    if (dot.x < 0) dot.x = W;
+                    if (dot.x > W) dot.x = 0;
+                    if (dot.y < 0) dot.y = H;
+                    if (dot.y > H) dot.y = 0;
+
+                    // Draw dot
+                    ctx.beginPath();
+                    ctx.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = dot.color + dot.opacity + ')';
+                    ctx.fill();
+                });
+            }
+
+            animationFrameId = requestAnimationFrame(drawDots);
         }
 
         drawDots();
