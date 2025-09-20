@@ -361,6 +361,13 @@
             letter-spacing: -0.02em;
         }
 
+        .hero-content .logoOnly.svgshadow {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 24px;
+            filter: invert(1) brightness(10) drop-shadow(rgba(0, 0, 0, 0.4) 0px 2px 1px);
+        }
+
         .hero-theme {
             font-size: 1.8rem;
             color: var(--accent-gold);
@@ -654,6 +661,15 @@
             transform: none;
         }
 
+        .carousel-btn:focus {
+            outline: none;
+            box-shadow: 0 6px 16px rgba(85, 141, 146, 0.4);
+        }
+
+        .carousel-btn:active {
+            outline: none;
+        }
+
         .carousel-indicators {
             display: flex;
             justify-content: center;
@@ -694,7 +710,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-                gap: var(--space-lg);
+            gap: var(--space-lg);
         }
 
         .topic-icon {
@@ -1604,6 +1620,11 @@
 
         .scroll-to-top:active {
             transform: translateY(0);
+        }
+
+        .scroll-to-top:focus {
+            outline: none;
+            box-shadow: 0 6px 20px rgba(244, 199, 79, 0.4);
         }
 
         @media (max-width: 768px) {
