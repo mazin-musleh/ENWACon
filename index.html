@@ -8,6 +8,9 @@
         content="مؤتمر القطاع غير الربحي الأول في البيئة والمياه والزراعة - بالتكامل نصنع أثرًا مستدامًا. 9-10 ديسمبر 2025، فندق فيرمونت الرياض. انضم إلينا لمناقشة الاستدامة البيئية والتكامل بين القطاعات.">
     <title>مؤتمر القطاع غير الربحي الأول في وزارة البيئة والمياه والزراعة</title>
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./assets/img/Logo.svg">
+
     <!-- Main CSS (Top Priority) -->
     <link rel="stylesheet" href="./assets/css/main.css?ver=1.01">
 
@@ -248,6 +251,9 @@
                     <span>وكالة الوزارة لخدمة المستفيدين وشؤون الفروع<br>
                         الإدارة العامة لمنظمات القطاع غير الربحي</span>
                 </div>
+                <a href="#testimonials" class="scroll-down-btn btn" aria-label="انتقل إلى القسم التالي">
+                    <i class="fas fa-chevron-down"></i>
+                </a>
             </div>
             <canvas id="dotsCanvas"></canvas>
         </section>
@@ -374,8 +380,8 @@
         </section>
 
         <!-- Vision and Mission Section -->
-        <section class="vision-section glassy-section lazy-bg parallax-section" id="vision-mission" role="region"
-            aria-labelledby="vision-title" style="--bg-image: url('../img/vision.jpg');">
+        <section class="vision-section glassy-section parallax-section" id="vision-mission" role="region"
+            aria-labelledby="vision-title">
             <div class="parallax-bg" data-bg="./assets/img/vision.jpg"></div>
             <div class="container">
                 <div class="vision-content">
@@ -512,8 +518,8 @@
         </section>
 
         <!-- Overview Section -->
-        <section class="overview-section glassy-section lazy-bg parallax-section" id="overview" role="region"
-            aria-labelledby="overview-title" style="--bg-image: url('../img/tabuk-bg.webp');">
+        <section class="overview-section glassy-section parallax-section" id="overview" role="region"
+            aria-labelledby="overview-title">
             <div class="parallax-bg" data-bg="./assets/img/tabuk-bg.webp"></div>
             <div class="container">
                 <div class="overview-content">
@@ -1366,8 +1372,8 @@
 
     <!-- Lazy Loading Script -->
     <script>
-        // Lazy loading for background images
-        const lazyBackgrounds = document.querySelectorAll('.lazy-bg');
+        // Lazy loading for background images (exclude parallax elements)
+        const lazyBackgrounds = document.querySelectorAll('.lazy-bg:not(.parallax-bg)');
 
         const imageObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -1377,7 +1383,7 @@
                 }
             });
         }, {
-            rootMargin: '50px 0px',
+            rootMargin: '500px 0px',
             threshold: 0.1
         });
 
@@ -1390,30 +1396,34 @@
     <script>
         // Parallax effect for background images
         function initParallax() {
+            // Prevent multiple initializations
+            if (window.parallaxInitialized) {
+                return;
+            }
+            window.parallaxInitialized = true;
+
             const parallaxElements = document.querySelectorAll('.parallax-bg');
 
             if (parallaxElements.length === 0) return;
 
-            // Load background images with lazy loading
+            // Simple IntersectionObserver for parallax loading
             const parallaxObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const element = entry.target;
                         const bgImage = element.getAttribute('data-bg');
+
                         if (bgImage) {
-                            // Preload image
-                            const img = new Image();
-                            img.onload = () => {
-                                element.style.background = `var(--bg-gradient), url('${bgImage}') center/cover no-repeat`;
-                                element.classList.add('loaded');
-                            };
-                            img.src = bgImage;
+                            observer.unobserve(element);
+
+                            // Set background directly - CSS will handle image loading
+                            element.style.background = `var(--bg-gradient), url('${bgImage}') center/cover no-repeat`;
+                            element.classList.add('loaded');
                         }
-                        observer.unobserve(element);
                     }
                 });
             }, {
-                rootMargin: '50px 0px',
+                rootMargin: '500px 0px',
                 threshold: 0.1
             });
 

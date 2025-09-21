@@ -75,6 +75,14 @@
             overflow-x: hidden;
         }
 
+        button,.btn,.btn-primary{
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            outline: none;
+        }
         /* Utility Classes */
         .container {
             max-width: 1200px;
@@ -322,7 +330,7 @@
             color: var(--white);
             min-height: 100vh;
             /* Fallback for older browsers */
-            min-height: 100svh;
+            min-height: 100dvh;
             /* Small viewport height */
             display: flex;
             align-items: center;
@@ -414,6 +422,40 @@
             width: 250px;
             object-fit: cover;
             height: 65px;
+        }
+
+        .scroll-down-btn {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--white);
+            font-size: 1.5rem;
+            text-decoration: none;
+            z-index: 4;
+            padding: 15px;
+            border-radius: 50%;
+            transition: all var(--transition-normal);
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-down-btn:hover {
+            color: var(--accent-gold);
+            transform: translateX(-50%) translateY(-3px);
+            filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
         }
 
         /* Section Styles */
@@ -779,18 +821,12 @@
 
         /* Overview Section */
         .overview-section {
-            --bg-image: url('../img/tabuk-bg.webp');
-            --bg-position: bottom;
-            --bg-size: cover;
-            --bg-repeat: no-repeat;
-            --bg-attachment: scroll;
-            background:
-                linear-gradient(135deg, #02271c 0%, rgb(3 45 32 / 50%) 50%, #02271c 100%);
+            background: var(--bg-gradient);
             color: var(--white);
             padding: var(--space-3xl) 0;
             position: relative;
-            overflow: hidden;
         }
+
 
         .overview-section::before {
             content: '';
@@ -932,23 +968,23 @@
         .activity-icon {
             width: 70px;
             height: 70px;
-            background: linear-gradient(135deg, var(--accent-gold) 0%, #f7d76b 100%);
+            background: var(--white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto var(--space-md);
-            color: var(--dark-pine);
+            color: var(--deep-green);
             font-size: 1.8rem;
-            box-shadow: 0 12px 30px rgba(244, 199, 79, 0.4);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
             transition: all var(--transition-normal);
         }
 
         .activity-item:hover .activity-icon {
             transform: translateY(-2px);
-            background: var(--white);
-            color: var(--deep-green);
-            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+            background: linear-gradient(135deg, var(--accent-gold) 0%, #f7d76b 100%);
+            color: var(--dark-pine);
+            box-shadow: 0 12px 30px rgba(244, 199, 79, 0.4);
         }
 
         /* Expo Areas */
@@ -1135,18 +1171,12 @@
 
         /* Vision Section */
         .vision-section {
-            --bg-image: url('../img/vision.jpg');
-            --bg-position: top;
-            --bg-size: cover;
-            --bg-repeat: no-repeat;
-            --bg-attachment: scroll;
-            background:
-                linear-gradient(135deg, #02271c 0%, rgb(3 45 32 / 50%) 50%, #02271c 100%);
+            background: var(--bg-gradient);
             color: var(--white);
             padding: var(--space-3xl) 0;
             position: relative;
-            overflow: hidden;
         }
+
 
         .vision-section::before {
             content: '';
@@ -1270,7 +1300,7 @@
         }
 
         /* Glass effect for sections without lazy-bg */
-        .glassy-section:not(.lazy-bg)::before {
+        .glassy-section:not(.lazy-bg,.parallax-section)::before {
             content: '';
             position: absolute;
             top: 0;
@@ -1327,7 +1357,7 @@
 
         /* Footer */
         .footer {
-            background: linear-gradient(135deg, var(--text-dark) 0%, #1a252f 100%);
+            background: linear-gradient(0deg, var(--dark-pine) 0%, var(--deep-green) 100%);
             color: var(--white);
             text-align: center;
             padding: var(--space-xl) 0;
@@ -1388,7 +1418,6 @@
             color: var(--white);
             text-decoration: none;
             font-size: 0.9rem;
-            opacity: 0.8;
             transition: all var(--transition-normal);
             position: relative;
         }
@@ -1415,7 +1444,6 @@
 
         .footer-copyright {
             font-size: 0.85rem;
-            opacity: 0.7;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: var(--space-md);
             margin-top: var(--space-md);
