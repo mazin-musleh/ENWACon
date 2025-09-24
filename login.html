@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - مؤتمر البيئة والمياه والزراعة</title>
+    <meta name="description" content="تسجيل الدخول - مؤتمر البيئة والمياه والزراعة">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
+
+    <!-- Font Awesome -->
+    <link href="./assets/fontawesome/all.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    </noscript>
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+
+<body>
+    <!-- Login Section -->
+    <main role="main">
+        <section class="hero glassy-section lazy-bg login-section" id="login" role="banner" aria-labelledby="login-title">
+            <div class="container">
+                <div class="login-content">
+                    <div class="login-logo">
+                        <img src="./assets/img/ALL_WHITE_RGB_NO_BG.svg" alt="شعار مؤتمر البيئة والمياه والزراعة" class="logo-vertical">
+                        <img src="./assets/img/Logo_Horizontal_White.svg" alt="شعار مؤتمر البيئة والمياه والزراعة" class="logo-horizontal">
+                    </div>
+
+                    <div class="login-form">
+                        <h1 class="login-title hero-title" id="login-title">تسجيل الدخول</h1>
+                        <form>
+                            <div class="form-group">
+                                <label for="email">البريد الإلكتروني</label>
+                                <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" autocomplete="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password">كلمة المرور</label>
+                                <input type="password" id="password" name="password" placeholder="أدخل كلمة المرور" autocomplete="current-password" required>
+                            </div>
+
+                            <div class="form-options">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="remember" name="remember">
+                                    <label for="remember">تذكرني</label>
+                                </div>
+                                <a href="#" class="forgot-password">هل نسيت كلمة المرور؟</a>
+                            </div>
+
+                            <button type="submit" class="btn-primary">تسجيل الدخول</button>
+
+                            <div class="register-link">
+                                <a href="register.html">ليس لديك حساب؟ سجل الآن</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <canvas id="dotsCanvas"></canvas>
+        </section>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
