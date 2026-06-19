@@ -448,7 +448,7 @@ button,
 
 .scroll-down-btn {
     position: absolute;
-    bottom: 30px;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     color: var(--white);
@@ -701,6 +701,7 @@ section:not(.glassy-section):after {
 
 .testimonial-slide .name img {
     max-width: 350px;
+    width: 100%;
     height: auto;
     margin-top: 12px;
 }
@@ -1856,6 +1857,7 @@ section:not(.glassy-section):after {
     min-width: 250px;
     max-width: 300px;
     height: auto;
+    width: 100%;
 }
 
 /* Dynamic logo switching - Vertical for 2-column layout */
