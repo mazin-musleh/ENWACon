@@ -80,14 +80,6 @@ npx terser assets/js/script.js -c -m -o assets/js/script.min.js
 npx postcss assets/css/main.css --use cssnano -o assets/css/main.min.css
 ```
 
-## 📦 Deployment (GitHub Pages)
-
-1. Push to the `master` branch.
-2. **Settings → Pages → Source: “Deploy from a branch” → `master` / `root` → Save.**
-3. The site goes live at `https://mazin-musleh.github.io/ENWACon/`.
-
-The repo must be **public** for GitHub Pages on a free account.
-
 ## 📄 License / usage
 
 The source code is shared for demonstration and educational purposes. Ministry branding, logos, official imagery, and content are the property of their respective owners and are **not** covered by any open‑source grant.
