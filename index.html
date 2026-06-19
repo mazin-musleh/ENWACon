@@ -7,9 +7,33 @@
     <meta name="description"
         content="مؤتمر القطاع غير الربحي الأول في البيئة والمياه والزراعة - بالتكامل نصنع أثرًا مستدامًا. 9-10 ديسمبر 2025، فندق فيرمونت الرياض. انضم إلينا لمناقشة الاستدامة البيئية والتكامل بين القطاعات.">
     <title>مؤتمر القطاع غير الربحي الأول في وزارة البيئة والمياه والزراعة</title>
+    <link rel="canonical" href="https://mazin-musleh.github.io/ENWACon/">
+    <meta name="theme-color" content="#10634b">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="مؤتمر القطاع غير الربحي - البيئة والمياه والزراعة">
+    <meta property="og:locale" content="ar_SA">
+    <meta property="og:title" content="مؤتمر القطاع غير الربحي الأول في وزارة البيئة والمياه والزراعة">
+    <meta property="og:description" content="بالتكامل نصنع أثرًا مستدامًا · 9–10 ديسمبر 2025 · فندق فيرمونت الرياض.">
+    <meta property="og:url" content="https://mazin-musleh.github.io/ENWACon/">
+    <meta property="og:image" content="https://mazin-musleh.github.io/ENWACon/assets/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="مؤتمر القطاع غير الربحي الأول في وزارة البيئة والمياه والزراعة">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="مؤتمر القطاع غير الربحي الأول في وزارة البيئة والمياه والزراعة">
+    <meta name="twitter:description" content="بالتكامل نصنع أثرًا مستدامًا · 9–10 ديسمبر 2025 · فندق فيرمونت الرياض.">
+    <meta name="twitter:image" content="https://mazin-musleh.github.io/ENWACon/assets/img/og-image.jpg">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="./assets/img/Logo.svg">
+
+    <!-- Preload hero background (responsive) -->
+    <link rel="preload" as="image" href="./assets/img/heroBg-mobile.webp" media="(max-width: 768px)" fetchpriority="high">
+    <link rel="preload" as="image" href="./assets/img/heroBg.webp" media="(min-width: 769px)" fetchpriority="high">
 
     <!-- Main CSS (Top Priority) -->
     <link rel="stylesheet" href="./assets/css/main.css?ver=1.01">
@@ -21,6 +45,36 @@
     <!-- Font Awesome (Deferred) -->
     <link rel="preload" href="./assets/fontawesome/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="./assets/fontawesome/all.min.css"></noscript>
+
+    <!-- Structured Data: Event -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "مؤتمر القطاع غير الربحي الأول في وزارة البيئة والمياه والزراعة",
+      "description": "بالتكامل نصنع أثرًا مستدامًا. مؤتمر القطاع غير الربحي الأول في البيئة والمياه والزراعة.",
+      "startDate": "2025-12-09",
+      "endDate": "2025-12-10",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "image": "https://mazin-musleh.github.io/ENWACon/assets/img/og-image.jpg",
+      "url": "https://mazin-musleh.github.io/ENWACon/",
+      "location": {
+        "@type": "Place",
+        "name": "فندق فيرمونت الرياض",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "الرياض",
+          "addressCountry": "SA"
+        }
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "وزارة البيئة والمياه والزراعة",
+        "url": "https://www.mewa.gov.sa"
+      }
+    }
+    </script>
 
 </head>
 
@@ -242,7 +296,7 @@
                             فيرمونت الرياض</p>
                     </div>
                     <div class="hero-cta">
-                        <a href="#contact" class="btn-primary" role="button" aria-describedby="contact-section">سجّل
+                        <a href="register.html" class="btn-primary" role="button">سجّل
                             الآن</a>
                     </div>
                 </div>
@@ -266,7 +320,7 @@
                         <div class="testimonials-track" id="testimonialsTrack" role="tabpanel" aria-live="polite"
                             aria-label="شهادات القيادات">
                             <div class="testimonial-slide">
-                                <img class="avatar" src="./assets/img/king-salman.jpg" loading="lazy"
+                                <img class="avatar" src="./assets/img/king-salman.webp" loading="lazy"
                                     alt="خادم الحرمين الشريفين الملك سلمان بن عبدالعزيز آل سعود">
                                 <div class="speech">
                                     <img src="./assets/img/king-speech.svg" alt="كلمة خادم الحرمين الشريفين">
@@ -276,7 +330,7 @@
                                 </div>
                             </div>
                             <div class="testimonial-slide">
-                                <img class="avatar" src="./assets/img/crown-prince-mohammed-bin-salman.jpg" loading="lazy"
+                                <img class="avatar" src="./assets/img/crown-prince-mohammed-bin-salman.webp" loading="lazy"
                                     alt="صاحب السمو الملكي الأمير محمد بن سلمان بن عبدالعزيز آل سعود">
                                 <div class="speech">
                                     <img src="./assets/img/crown-prince-speech.svg" alt="كلمة صاحب السمو الملكي ولي العهد">
@@ -286,7 +340,7 @@
                                 </div>
                             </div>
                             <div class="testimonial-slide">
-                                <img class="avatar" src="./assets/img/minister.jpg" loading="lazy"
+                                <img class="avatar" src="./assets/img/minister.webp" loading="lazy"
                                     alt="معالي وزير البيئة والمياه والزراعة المهندس عبدالرحمن بن عبد المحسن الفضلي">
                                 <div class="speech">
                                     <img src="./assets/img/minister-speech.svg" alt="كلمة معالي وزير البيئة والمياه والزراعة">
@@ -295,7 +349,7 @@
                                 </div>
                             </div>
                             <div class="testimonial-slide">
-                                <img class="avatar" src="./assets/img/deputy-minister.jpg" loading="lazy"
+                                <img class="avatar" src="./assets/img/deputy-minister.webp" loading="lazy"
                                     alt="معالي نائب وزير البيئة والمياه والزراعة المهندس منصور بن هلال المشيطي">
                                 <div class="speech">
                                     <img src="./assets/img/deputy-minister-speech.svg"
@@ -382,7 +436,7 @@
         <!-- Vision and Mission Section -->
         <section class="vision-section glassy-section parallax-section" id="vision-mission" role="region"
             aria-labelledby="vision-title">
-            <div class="parallax-bg" data-bg="./assets/img/vision.jpg"></div>
+            <div class="parallax-bg" data-bg="./assets/img/vision.webp"></div>
             <div class="container">
                 <div class="vision-content">
                     <h2 class="section-title" id="vision-title"
@@ -888,7 +942,7 @@
                         <p>راسلنا على البريد الإلكتروني:</p>
                         <p><a href="mailto:conference@moa.gov.sa">conference@moa.gov.sa</a></p>
                         <div style="margin-top: var(--space-lg);">
-                            <a href="mailto:conference@moa.gov.sa" class="btn-primary">سجّل الآن</a>
+                            <a href="register.html" class="btn-primary">سجّل الآن</a>
                         </div>
                     </div>
                 </div>
